@@ -340,3 +340,220 @@ Processing by UsersController#create as HTML
   Rendered users/create.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 5ms (Views: 5.3ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (2.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160414200812)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_hash" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160414200812"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("email", "password_hash", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-04-14 20:09:57', '2016-04-14 20:09:57', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("email", "password_hash", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-04-14 20:09:57', '2016-04-14 20:09:57', 298486374)[0m
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_delete
+-------------------------------------------
+Processing by UsersController#delete as HTML
+  Rendered users/delete.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 589ms (Views: 589.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_edit
+-----------------------------------------
+Processing by UsersController#edit as HTML
+  Rendered users/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_show
+-----------------------------------------
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_create
+-------------------------------------------
+Processing by UsersController#create as HTML
+  Rendered users/create.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_update
+-------------------------------------------
+Processing by UsersController#update as HTML
+  Rendered users/update.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+SignupControllerTest: test_should_get_new
+-----------------------------------------
+Processing by SignupController#new as HTML
+  Rendered signup/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+SignupControllerTest: test_should_get_create
+--------------------------------------------
+Processing by SignupController#create as HTML
+  Rendered signup/create.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+LinksControllerTest: test_should_get_edit
+-----------------------------------------
+Processing by LinksController#edit as HTML
+  Rendered links/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+LinksControllerTest: test_should_get_create
+-------------------------------------------
+Processing by LinksController#create as HTML
+  Rendered links/create.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+LinksControllerTest: test_should_get_show
+-----------------------------------------
+Processing by LinksController#show as HTML
+  Rendered links/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+LinksControllerTest: test_should_get_update
+-------------------------------------------
+Processing by LinksController#update as HTML
+  Rendered links/update.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+LinksControllerTest: test_should_get_delete
+-------------------------------------------
+Processing by LinksController#delete as HTML
+  Rendered links/delete.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+LinksControllerTest: test_should_get_index
+------------------------------------------
+Processing by LinksController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+LinksControllerTest: test_should_get_new
+----------------------------------------
+Processing by LinksController#new as HTML
+  Rendered links/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+CommentsControllerTest: test_should_get_index
+---------------------------------------------
+Processing by CommentsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+CommentsControllerTest: test_should_get_new
+-------------------------------------------
+Processing by CommentsController#new as HTML
+  Rendered comments/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+CommentsControllerTest: test_should_get_edit
+--------------------------------------------
+Processing by CommentsController#edit as HTML
+  Rendered comments/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+CommentsControllerTest: test_should_get_update
+----------------------------------------------
+Processing by CommentsController#update as HTML
+  Rendered comments/update.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+CommentsControllerTest: test_should_get_delete
+----------------------------------------------
+Processing by CommentsController#delete as HTML
+  Rendered comments/delete.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+CommentsControllerTest: test_should_get_show
+--------------------------------------------
+Processing by CommentsController#show as HTML
+  Rendered comments/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+CommentsControllerTest: test_should_get_create
+----------------------------------------------
+Processing by CommentsController#create as HTML
+  Rendered comments/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+LoginControllerTest: test_should_get_create
+-------------------------------------------
+Processing by LoginController#create as HTML
+  Rendered login/create.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+LoginControllerTest: test_should_get_new
+----------------------------------------
+Processing by LoginController#new as HTML
+  Rendered login/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction

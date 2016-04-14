@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'login/new'
+
+  get 'login/create'
+
+  get 'signup/new'
+
+  get 'signup/create'
+
   get 'comments/index'
 
   get 'comments/new'
