@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+steve:
+  name: Steve
   email: MyString
   password_hash: MyString
 
-two:
+bob:
+  name: Bob
   email: MyString
   password_hash: MyString

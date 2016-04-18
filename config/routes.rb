@@ -1,15 +1,29 @@
 Rails.application.routes.draw do
-  get 'login/new'
+  get 'sessions/new'
 
-  get 'login/create'
+  resources :comments
 
-  get 'signup/new'
+  resources :users
 
-  get 'signup/create'
+  resources :links
 
-  get 'comments/index'
+  # resources :login
 
-  get 'comments/new'
+  get "login" => "sessions#new"
+
+  delete 'logout'  => 'sessions#destroy'
+
+  get 'login' => 'login#new'
+
+  post 'login' => 'login#create'
+
+  get 'signup' => 'signup#new'
+
+  post 'signup' => 'signup#create'
+
+  get 'comments/index' => 'comments#index'
+
+  get 'comments/new' => 'comments#new', :as => :comments_index_path
 
   get 'comments/show'
 
@@ -53,7 +67,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

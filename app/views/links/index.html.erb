@@ -1,2 +1,11 @@
 <h1>Links#index</h1>
 <p>Find me in app/views/links/index.html.erb</p>
+<%= @links.each do |link| %>
+<div class="link">
+  <p class="post"><%= link.subject %></p>
+  <p class="post"><%= link.description %></p>
+  <p class="post"><%= link.post %></p>
+  <p class="post"><%= link.user_id %></p>
+  <p class="time"><%= link.created_at %></p>
+</div>
+<% end %>
