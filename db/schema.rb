@@ -17,15 +17,17 @@ ActiveRecord::Schema.define(version: 20160415124030) do
     t.integer  "user_id"
     t.integer  "link_id"
     t.string   "title"
-    t.string   "content"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "comments", ["link_id"], name: "index_comments_on_link_id"
+
   create_table "links", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "post"
-    t.string   "description"
+    t.text     "description"
     t.string   "subject"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

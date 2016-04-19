@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :links
   has_many :comments #, through: :links
   # has_many :commenters, through: :comments
-
+  has_secure_password
   validates :email, presence: :true
   validates :password, confirmation: true
 

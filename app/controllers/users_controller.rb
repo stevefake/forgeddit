@@ -24,6 +24,16 @@ class UsersController < ApplicationController
 
     redirect_to action: 'show', id: @user.id
   end
+  # alternate method to play around with:
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     session[:user_id] = @user.id 
+  #     redirect_to '/'
+  #   else
+  #     redirect_to '/signup'
+  #   end
+  # end
 
   def delete
   end

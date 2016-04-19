@@ -3,7 +3,7 @@ class CreateLinks < ActiveRecord::Migration
     create_table :links, force: :cascade do |t|
       t.integer :user_id
       t.string :post
-      t.string :description
+      t.text :description
       t.string :subject
       # t.references :user
       t.timestamps null: false

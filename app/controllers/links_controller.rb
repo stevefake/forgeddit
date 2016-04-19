@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+
   def index
     @links = Link.all
   end
@@ -20,6 +22,8 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.create(link_params)
+    @comment = @link.comments.create(comment_params)
+    redirect_to link_path(@link)
   end
 
   def destroy
@@ -31,5 +35,9 @@ class LinksController < ApplicationController
 
   def link_params
     params.require(:link).permit(:subject, :description, :post)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:commenter, :body)
   end
 end

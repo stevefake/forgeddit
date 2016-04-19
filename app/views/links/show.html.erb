@@ -1,2 +1,24 @@
 <h1>Links#show</h1>
 <p>Find me in app/views/links/show.html.erb</p>
+
+<p><strong>Title:</strong>
+  <%= @link.subject %> </p>
+<p><strong>Text:</strong>
+  <%= @link.post %> </p>
+<h2>Comments</h2 >
+  <% @link.comments.each do |comment| %>
+  <p><strong>Commenter:</strong>
+  <%= comment.user_id %> </p>
+  <p><strong>Comment:</strong>
+  <%= comment.content %> </p>
+  <% end %>
+<h2>Add a comment:</h2>
+ <%= form_for([@link, @link.comments.build]) do |f| %>
+ <p> <%= f.label :title %> <br>
+     <%= f.text_field :title %> </p>
+  <p> <%= f.label :content %> <br>
+      <%= f.text_area :content %> </p>
+ <p> <%= f.submit %> </p>
+  <% end %>
+  <%= link_to 'Edit', edit_link_path(@link) %>
+  <%= link_to 'Back', links_path %>

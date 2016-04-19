@@ -4,7 +4,7 @@
 <%= form_for @user, url: signup_path do |f| %>
   <div class="form-group">
 
-      <%= f.label :name %>
+      <%= f.label :name, :placeholder => "Name" %>
       <%= f.text_field :name %>
       <%= f.label :email %>
       <%= f.text_field :email %>

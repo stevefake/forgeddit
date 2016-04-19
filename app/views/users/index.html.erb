@@ -5,7 +5,11 @@
   <code><%= session.to_hash %></code>
 </pre>
 <% if current_user %>
-  Welcome, <%= current_user.name %>!
+  Welcome, <%= current_user.name %>
+  Logout <%= link_to "Logout", logout_path, method: :delete %>
+<% else %>
+  Signup <%= link_to "Signup", signup_path %>
+  or Login <%= link_to "Login", login_path %>
 <% end %>
 <table class="table">
   <thead>
@@ -30,5 +34,4 @@
       </td>
     </tr>
   </tbody>
-
 </table>

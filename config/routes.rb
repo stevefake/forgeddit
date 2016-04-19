@@ -1,13 +1,29 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  resources :comments
-
+  get 'signup'  => 'users#new'
   resources :users
+  # get 'sessions/new'
+  #
+  # get '/links/:id', to: 'links#show'
 
-  resources :links
+  # resources :comments
 
+  post 'login' => 'login#new'
+
+  # resources :users
+
+  resources :links do
+    resources :comments
+  end
   # resources :login
+
+  resources :sessions
+  # resource :login, controller: "sessions" do
+  # collection do
+  #   get 'new'
+  #   get 'create'
+  # end
+  # end
+
 
   get "login" => "sessions#new"
 
@@ -15,53 +31,55 @@ Rails.application.routes.draw do
 
   get 'login' => 'login#new'
 
+  post 'login' => 'login#new'
+
   post 'login' => 'login#create'
 
   get 'signup' => 'signup#new'
 
   post 'signup' => 'signup#create'
 
-  get 'comments/index' => 'comments#index'
-
-  get 'comments/new' => 'comments#new', :as => :comments_index_path
-
-  get 'comments/show'
-
-  get 'comments/edit'
-
-  get 'comments/update'
-
-  get 'comments/create'
-
-  get 'comments/delete'
-
-  get 'links/index'
-
-  get 'links/new'
-
-  get 'links/show'
-
-  get 'links/edit'
-
-  get 'links/update'
-
-  get 'links/create'
-
-  get 'links/delete'
-
-  get 'users/index'
-
-  get 'users/new'
-
-  get 'users/show'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/create'
-
-  get 'users/delete'
+  get 'comments/index' => 'comments#index'   # this is currently necessary; how to refactor?
+  #
+  # get 'comments/new' => 'comments#new', :as => :comments_index_path
+  #
+  # get 'comments/show'
+  #
+  # get 'comments/edit'
+  #
+  # get 'comments/update'
+  #
+  # get 'comments/create'
+  #
+  # get 'comments/delete'
+  #
+  # get 'links/index'
+  #
+  # get 'links/new'
+  #
+  # get 'links/show'
+  #
+  # get 'links/edit'
+  #
+  # get 'links/update'
+  #
+  # get 'links/create'
+  #
+  # get 'links/delete'
+  #
+  # get 'users/index'
+  #
+  # get 'users/new'
+  #
+  # get 'users/show'
+  #
+  # get 'users/edit'
+  #
+  # get 'users/update'
+  #
+  # get 'users/create'
+  #
+  # get 'users/delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

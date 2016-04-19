@@ -2,29 +2,18 @@
 <html>
 <head>
   <title>Forgeddit</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  
 </head>
 <body>
+  <div class="container">
 
   <h1>Forgeddit</h1>
+    <%= link_to "Comments", comments_index_path %>
+    <%= link_to "Users", users_path %>
+    <%= link_to "Links", links_path %>
 
-  <table>
-    <tr>
-      <th>Comment</th>
-      <th>Summary</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
-    <div class="container">
     <%= yield %>
+
   </div>
-  </table>
-
-  <br>
-
 </body>
 </html>
